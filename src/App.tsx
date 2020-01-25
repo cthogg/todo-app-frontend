@@ -2,6 +2,7 @@ import React from "react";
 import "./App.sass";
 import MultipleTodos from "./components/MultipleTodos";
 import { Todo } from "./types";
+import TodoForm from "./components/TodoForm";
 
 const mockTodos: Todo[] = [
   {
@@ -24,6 +25,7 @@ const App: React.FC = () => {
       <section className="section">
         <p className="is-size-2"> TODOs </p>
       </section>
+      <TodoForm></TodoForm>
       <MultipleTodos todos={mockTodos}> </MultipleTodos>
     </div>
   );

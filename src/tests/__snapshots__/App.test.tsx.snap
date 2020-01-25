@@ -13,6 +13,43 @@ exports[`renders correctly 1`] = `
        TODOs 
     </p>
   </section>
+  <div>
+    <h1>
+      Add a TODO
+    </h1>
+    <form
+      action="#"
+      onReset={[Function]}
+      onSubmit={[Function]}
+    >
+      <input
+        name="title"
+        onBlur={[Function]}
+        onChange={[Function]}
+        type="text"
+        value="Title"
+      />
+      <input
+        name="description"
+        onBlur={[Function]}
+        onChange={[Function]}
+        type="text"
+        value="Description"
+      />
+      <input
+        name="date"
+        onBlur={[Function]}
+        onChange={[Function]}
+        type="date"
+      />
+      <button
+        disabled={false}
+        type="submit"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
   <form>
     <label>
       Filter by Title:
