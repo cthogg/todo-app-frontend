@@ -27,21 +27,21 @@ exports[`renders correctly 1`] = `
         onBlur={[Function]}
         onChange={[Function]}
         type="text"
-        value="Title"
+        value=""
       />
       <input
         name="description"
         onBlur={[Function]}
         onChange={[Function]}
         type="text"
-        value="Description"
+        value=""
       />
       <input
         name="date"
         onBlur={[Function]}
         onChange={[Function]}
         type="date"
-        value="2020-01-01"
+        value=""
       />
       <button
         disabled={false}
