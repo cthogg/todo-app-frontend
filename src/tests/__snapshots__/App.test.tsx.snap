@@ -23,6 +23,7 @@ exports[`renders correctly 1`] = `
         onSubmit={[Function]}
       >
         <input
+          className="input"
           name="title"
           onBlur={[Function]}
           onChange={[Function]}
@@ -31,6 +32,7 @@ exports[`renders correctly 1`] = `
           value=""
         />
         <input
+          className="input"
           name="description"
           onBlur={[Function]}
           onChange={[Function]}
@@ -39,6 +41,7 @@ exports[`renders correctly 1`] = `
           value=""
         />
         <input
+          className="input"
           name="dueDate"
           onBlur={[Function]}
           onChange={[Function]}
@@ -46,7 +49,9 @@ exports[`renders correctly 1`] = `
           type="date"
           value=""
         />
+        <br />
         <button
+          className="button"
           disabled={false}
           type="submit"
         >
@@ -59,120 +64,184 @@ exports[`renders correctly 1`] = `
 `;
 
 exports[`renders multiple questions correctly 1`] = `
-<section
-  className="section"
->
-  <div
-    className="card"
+Array [
+  <section
+    className="section"
   >
-    <form>
-      <label>
-        Filter by Title:
-        <input
-          onChange={[Function]}
-          type="text"
-          value=""
-        />
-      </label>
-    </form>
-    <section
-      className="todoCard"
+    <div
+      className="card"
     >
-      <div
-        className="card"
-      >
-        <span
-          onClick={[Function]}
-        >
-          <svg
-            fill="currentColor"
-            height="1em"
-            stroke="currentColor"
-            strokeWidth="0"
-            style={
-              Object {
-                "color": undefined,
-              }
-            }
-            viewBox="0 0 512 512"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
-            />
-          </svg>
-           
-        </span>
-        <p>
-           
-          Buy Milk
-        </p>
-        <p>
-           
-          Friday, February 8th
-           
-        </p>
-        <p>
-           
-          Buy milk from Rewe
-        </p>
-        <button
-          onClick={[Function]}
-        >
-           Edit 
-        </button>
-      </div>
-    </section>
-    <section
-      className="todoCard"
+      <form>
+        <label>
+          Filter by Title:
+          <input
+            className="input"
+            onChange={[Function]}
+            placeholder="Filter"
+            type="text"
+            value=""
+          />
+        </label>
+      </form>
+    </div>
+  </section>,
+  <section
+    className="section"
+  >
+    <div
+      className="card"
     >
-      <div
-        className="card"
+      <section
+        className="todoCard"
       >
-        <span
-          onClick={[Function]}
+        <div
+          className="card"
         >
-          <svg
-            fill="currentColor"
-            height="1em"
-            stroke="currentColor"
-            strokeWidth="0"
-            style={
-              Object {
-                "color": undefined,
-              }
-            }
-            viewBox="0 0 512 512"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            className="level"
           >
-            <path
-              d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
-            />
-          </svg>
-           
-        </span>
-        <p>
-           
-          Buy Pizza
-        </p>
-        <p>
-           
-          Friday, February 8th
-           
-        </p>
-        <p>
-           
-          Ham and Pineapple
-        </p>
-        <button
-          onClick={[Function]}
+            <div
+              className="level-left"
+            >
+              <span
+                className="level-item button is-success"
+                onClick={[Function]}
+              >
+                <svg
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  strokeWidth="0"
+                  style={
+                    Object {
+                      "color": undefined,
+                    }
+                  }
+                  viewBox="0 0 512 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+                  />
+                </svg>
+                 
+              </span>
+              <p
+                className="level-item"
+              >
+                 
+                Friday, February 8th
+                 
+              </p>
+              <p
+                className="level-item has-text-weight-bold"
+              >
+                 
+                Buy Milk
+              </p>
+              <p
+                className="level-item"
+              >
+                 
+                Buy milk from Rewe
+              </p>
+            </div>
+            <div
+              className="level-right"
+            >
+              <button
+                className="button"
+                onClick={[Function]}
+              >
+                 
+                Edit
+                 
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>,
+  <section
+    className="section"
+  >
+    <div
+      className="card"
+    >
+      <section
+        className="todoCard"
+      >
+        <div
+          className="card"
         >
-           Edit 
-        </button>
-      </div>
-    </section>
-  </div>
-</section>
+          <div
+            className="level"
+          >
+            <div
+              className="level-left"
+            >
+              <span
+                className="level-item button is-success"
+                onClick={[Function]}
+              >
+                <svg
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  strokeWidth="0"
+                  style={
+                    Object {
+                      "color": undefined,
+                    }
+                  }
+                  viewBox="0 0 512 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+                  />
+                </svg>
+                 
+              </span>
+              <p
+                className="level-item"
+              >
+                 
+                Friday, February 8th
+                 
+              </p>
+              <p
+                className="level-item has-text-weight-bold"
+              >
+                 
+                Buy Pizza
+              </p>
+              <p
+                className="level-item"
+              >
+                 
+                Ham and Pineapple
+              </p>
+            </div>
+            <div
+              className="level-right"
+            >
+              <button
+                className="button"
+                onClick={[Function]}
+              >
+                 
+                Edit
+                 
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>,
+]
 `;

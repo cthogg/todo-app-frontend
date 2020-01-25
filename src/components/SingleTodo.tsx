@@ -20,22 +20,38 @@ const SingleTodo: React.FunctionComponent<SingleTodoProps> = ({
   return (
     <section className={"todoCard"}>
       <div className="card">
-        <span onClick={() => onDelete(id)}>
-          {/* TODO: add hover effect
-        TODO: make the list horizontal
-        TODO: add gap between filter by title and the rest
-        TODO: make buttons like with bulma */}
-          <FaCheckCircle> </FaCheckCircle>{" "}
-        </span>
-        <p> {title}</p>
-        <p> {date} </p>
-        <p> {description}</p>
+        <div className={`level`}>
+          <div className="level-left">
+            <span
+              className={`level-item button is-success`}
+              onClick={() => onDelete(id)}
+            >
+              <FaCheckCircle> </FaCheckCircle>{" "}
+            </span>
+            <p className="level-item"> {date} </p>
 
-        {!open && <button onClick={() => setOpen(true)}> Edit </button>}
+            <p className={`level-item has-text-weight-bold`}> {title}</p>
+            <p className="level-item"> {description}</p>
+          </div>
+          <div className="level-right">
+            {/* TODO: make buttons into an icon */}
+            {!open && (
+              <button className={"button"} onClick={() => setOpen(true)}>
+                {" "}
+                Edit{" "}
+              </button>
+            )}
+            {open && (
+              <button className={"button"} onClick={() => setOpen(false)}>
+                {" "}
+                Close{" "}
+              </button>
+            )}
+          </div>
+        </div>
+
         {open && (
           <>
-            <button onClick={() => setOpen(false)}> Close </button>
-
             <TodoForm
               addTodo={td => {
                 onChange(td);

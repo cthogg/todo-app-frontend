@@ -17,30 +17,37 @@ const MultipleTodos: React.FunctionComponent<MultipleTodosProps> = ({
     todo.title.toLowerCase().includes(filterInput.toLowerCase())
   );
   return (
-    <section className="section">
-      <div className="card">
-        <form>
-          <label>
-            Filter by Title:
-            <input
-              type="text"
-              value={filterInput}
-              onChange={e => setFilterInput(e.target.value)}
-            />
-          </label>
-        </form>
-        {filteredTodos.map((todo, i) => (
-          <SingleTodo
-            onDelete={id => onDelete(id)}
-            key={i}
-            todo={todo}
-            onChange={(todo: Todo) => onChange(todo)}
-          >
-            {" "}
-          </SingleTodo>
-        ))}
-      </div>
-    </section>
+    <>
+      <section className="section">
+        <div className="card">
+          <form>
+            <label>
+              Filter by Title:
+              <input
+                className={"input"}
+                placeholder="Filter"
+                type="text"
+                value={filterInput}
+                onChange={e => setFilterInput(e.target.value)}
+              />
+            </label>
+          </form>
+        </div>
+      </section>
+      {filteredTodos.map((todo, i) => (
+        <section className="section" key={i}>
+          <div className="card">
+            <SingleTodo
+              onDelete={id => onDelete(id)}
+              todo={todo}
+              onChange={(todo: Todo) => onChange(todo)}
+            >
+              {" "}
+            </SingleTodo>
+          </div>
+        </section>
+      ))}
+    </>
   );
 };
 

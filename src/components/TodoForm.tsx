@@ -44,13 +44,13 @@ const TodoForm: React.FunctionComponent<TodoFormProps> = ({
           validate={values => {
             const errors = {};
             if (values.title === "") {
-              errors["title"] = "← Title Required";
+              errors["title"] = "Title Required";
             }
             if (values.dueDate === DEFAULT_DATE) {
-              errors["dueDate"] = "← Date Required";
+              errors["dueDate"] = "Date Required";
             }
             if (values.description === "") {
-              errors["description"] = "← Description Required";
+              errors["description"] = "Description Required";
             }
             return errors;
           }}
@@ -65,13 +65,33 @@ const TodoForm: React.FunctionComponent<TodoFormProps> = ({
         >
           {({ isSubmitting }) => (
             <Form>
-              <Field type="text" name="title" placeholder="Title" />
+              <Field
+                className="input"
+                type="text"
+                name="title"
+                placeholder="Title"
+              />
               <ErrorMessage name="title" component="span" />
-              <Field type="text" name="description" placeholder="Description" />
+              <Field
+                className="input"
+                type="text"
+                name="description"
+                placeholder="Description"
+              />
               <ErrorMessage name="description" component="span" />
-              <Field type="date" name="dueDate" placeholder="Date" />
+              <Field
+                className="input"
+                type="date"
+                name="dueDate"
+                placeholder="Date"
+              />
               <ErrorMessage name="dueDate" component="span" />
-              <button type="submit" disabled={isSubmitting}>
+              <br />
+              <button
+                className={"button"}
+                type="submit"
+                disabled={isSubmitting}
+              >
                 Submit
               </button>
             </Form>
