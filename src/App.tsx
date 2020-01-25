@@ -4,7 +4,9 @@ import "./App.sass";
 const App: React.FC = () => {
   return (
     <div className="App">
-      <p> Hello</p>
+      <section className="section">
+        <p className="is-size-2"> TODOs </p>
+      </section>
     </div>
   );
 };

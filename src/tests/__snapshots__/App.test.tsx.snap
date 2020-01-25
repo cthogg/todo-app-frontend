@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="App"
+>
+  <section
+    className="section"
+  >
+    <p
+      className="is-size-2"
+    >
+       TODOs 
+    </p>
+  </section>
+</div>
+`;
