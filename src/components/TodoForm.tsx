@@ -11,6 +11,7 @@ interface InitialValues {
 interface TodoFormProps {
   addTodo: Function;
   initialValues?: InitialValues;
+  todoId?: string;
 }
 const DEFAULT_DATE = "";
 
@@ -21,7 +22,8 @@ const generateNewId = () => {
 };
 const TodoForm: React.FunctionComponent<TodoFormProps> = ({
   addTodo,
-  initialValues
+  initialValues,
+  todoId
 }: TodoFormProps): JSX.Element => {
   const [count, setCount] = useState<number>(0);
   const inValues =
@@ -37,7 +39,6 @@ const TodoForm: React.FunctionComponent<TodoFormProps> = ({
   return (
     <section className="section">
       <div className="card">
-        <h1>Add a TODO</h1>
         <Formik
           initialValues={inValues}
           validate={values => {
@@ -55,7 +56,8 @@ const TodoForm: React.FunctionComponent<TodoFormProps> = ({
           }}
           onSubmit={(values, { setSubmitting, resetForm }) => {
             var submittedValues = values;
-            submittedValues["id"] = generateNewId();
+            submittedValues["id"] =
+              todoId === undefined ? generateNewId() : todoId;
             addTodo(submittedValues);
             resetForm();
             setSubmitting(false);

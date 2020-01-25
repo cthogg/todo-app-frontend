@@ -5,10 +5,12 @@ import SingleTodo from "./SingleTodo";
 interface MultipleTodosProps {
   todos: Todo[];
   onDelete: Function;
+  onChange: Function;
 }
 const MultipleTodos: React.FunctionComponent<MultipleTodosProps> = ({
   todos,
-  onDelete
+  onDelete,
+  onChange
 }: MultipleTodosProps): JSX.Element => {
   const [filterInput, setFilterInput] = useState<string>("");
   const filteredTodos = todos.filter(todo =>
@@ -28,7 +30,12 @@ const MultipleTodos: React.FunctionComponent<MultipleTodosProps> = ({
           </label>
         </form>
         {filteredTodos.map((todo, i) => (
-          <SingleTodo onDelete={id => onDelete(id)} key={i} todo={todo}>
+          <SingleTodo
+            onDelete={id => onDelete(id)}
+            key={i}
+            todo={todo}
+            onChange={(todo: Todo) => onChange(todo)}
+          >
             {" "}
           </SingleTodo>
         ))}

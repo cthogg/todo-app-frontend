@@ -19,6 +19,7 @@ const TodoWrapper: React.FunctionComponent<TodoWrapperProps> = ({
   const apiHost = "http://todo-app-backend-66315.herokuapp.com/";
   const POST_TODOS = `${apiHost}${fetchTodoRoute}`;
   const DELETE_TODO = `${apiHost}${fetchTodoRoute}`;
+  const PUT_TODO = `${apiHost}${fetchTodoRoute}`;
 
   useEffect(() => {
     const FETCH_TODOS = `${apiHost}${fetchTodoRoute}`;
@@ -40,6 +41,14 @@ const TodoWrapper: React.FunctionComponent<TodoWrapperProps> = ({
 
   const deleteTodo = async (todoId: string) => {
     const result = await axios.delete(`${DELETE_TODO}/${todoId}`);
+    console.log("result: ", result);
+    //TODO: show error if error
+    setNum(num + 1);
+  };
+
+  const putTodo = async (todo: Todo) => {
+    const todoId = todo.id;
+    const result = await axios.put(`${PUT_TODO}/${todoId}`, todo);
     console.log("result: ", result);
     //TODO: show error if error
     setNum(num + 1);
@@ -69,6 +78,7 @@ const TodoWrapper: React.FunctionComponent<TodoWrapperProps> = ({
         <MultipleTodos
           onDelete={(id: string) => deleteTodo(id)}
           todos={todos}
+          onChange={(todo: Todo) => putTodo(todo)}
         />
       )}
     </>

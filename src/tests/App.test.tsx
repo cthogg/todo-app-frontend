@@ -12,7 +12,11 @@ it("renders correctly", () => {
 it("renders multiple questions correctly", () => {
   const tree = renderer
     .create(
-      <MultipleTodos todos={mockTodos} onDelete={() => null}>
+      <MultipleTodos
+        onChange={() => null}
+        todos={mockTodos}
+        onDelete={() => null}
+      >
         {" "}
       </MultipleTodos>
     )

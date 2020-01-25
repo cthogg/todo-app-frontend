@@ -17,9 +17,6 @@ exports[`renders correctly 1`] = `
     <div
       className="card"
     >
-      <h1>
-        Add a TODO
-      </h1>
       <form
         action="#"
         onReset={[Function]}
