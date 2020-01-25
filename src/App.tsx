@@ -20,7 +20,7 @@ export const mockTodos: Todo[] = [
 
 const App: React.FC = () => {
   return (
-    <div className="App">
+    <div>
       <section className="section">
         <p className="is-size-2"> TODOs </p>
       </section>

@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<div
-  className="App"
->
+<div>
   <section
     className="section"
   >
@@ -13,116 +11,131 @@ exports[`renders correctly 1`] = `
        TODOs 
     </p>
   </section>
-  <div>
-    <h1>
-      Add a TODO
-    </h1>
-    <form
-      action="#"
-      onReset={[Function]}
-      onSubmit={[Function]}
+  <section
+    className="section"
+  >
+    <div
+      className="card"
     >
-      <input
-        name="title"
-        onBlur={[Function]}
-        onChange={[Function]}
-        type="text"
-        value=""
-      />
-      <input
-        name="description"
-        onBlur={[Function]}
-        onChange={[Function]}
-        type="text"
-        value=""
-      />
-      <input
-        name="date"
-        onBlur={[Function]}
-        onChange={[Function]}
-        type="date"
-        value=""
-      />
-      <button
-        disabled={false}
-        type="submit"
+      <h1>
+        Add a TODO
+      </h1>
+      <form
+        action="#"
+        onReset={[Function]}
+        onSubmit={[Function]}
       >
-        Submit
-      </button>
-    </form>
-  </div>
+        <input
+          name="title"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Title"
+          type="text"
+          value=""
+        />
+        <input
+          name="description"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Description"
+          type="text"
+          value=""
+        />
+        <input
+          name="date"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Date"
+          type="date"
+          value=""
+        />
+        <button
+          disabled={false}
+          type="submit"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </section>
 </div>
 `;
 
 exports[`renders multiple questions correctly 1`] = `
-Array [
-  <form>
-    <label>
-      Filter by Title:
-      <input
-        onChange={[Function]}
-        type="text"
-        value=""
-      />
-    </label>
-  </form>,
-  <section
-    className="todoCard"
+<section
+  className="section"
+>
+  <div
+    className="card"
   >
-    <div
-      className="card"
-    >
-      <label
-        className="checkbox"
-      >
+    <form>
+      <label>
+        Filter by Title:
         <input
-          type="checkbox"
+          onChange={[Function]}
+          type="text"
+          value=""
         />
       </label>
-      <p>
-         
-        Buy Milk
-      </p>
-      <p>
-         
-        Friday, February 8th
-         
-      </p>
-      <button
-        onClick={[Function]}
-      >
-         Open 
-      </button>
-    </div>
-  </section>,
-  <section
-    className="todoCard"
-  >
-    <div
-      className="card"
+    </form>
+    <section
+      className="todoCard"
     >
-      <label
-        className="checkbox"
+      <div
+        className="card"
       >
-        <input
-          type="checkbox"
-        />
-      </label>
-      <p>
-         
-        Buy Pizza
-      </p>
-      <p>
-         
-        Friday, February 8th
-         
-      </p>
-      <button
-        onClick={[Function]}
+        <label
+          className="checkbox"
+        >
+          <input
+            type="checkbox"
+          />
+        </label>
+        <p>
+           
+          Buy Milk
+        </p>
+        <p>
+           
+          Friday, February 8th
+           
+        </p>
+        <button
+          onClick={[Function]}
+        >
+           Open 
+        </button>
+      </div>
+    </section>
+    <section
+      className="todoCard"
+    >
+      <div
+        className="card"
       >
-         Open 
-      </button>
-    </div>
-  </section>,
-]
+        <label
+          className="checkbox"
+        >
+          <input
+            type="checkbox"
+          />
+        </label>
+        <p>
+           
+          Buy Pizza
+        </p>
+        <p>
+           
+          Friday, February 8th
+           
+        </p>
+        <button
+          onClick={[Function]}
+        >
+           Open 
+        </button>
+      </div>
+    </section>
+  </div>
+</section>
 `;
