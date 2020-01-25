@@ -8,10 +8,21 @@ interface MultipleTodosProps {
 const MultipleTodos: React.FunctionComponent<MultipleTodosProps> = ({
   todos
 }: MultipleTodosProps): JSX.Element => {
-  const [count, setCount] = useState<number>(0);
+  const [filterInput, setFilterInput] = useState<string>("");
 
   return (
     <React.Fragment>
+      <form>
+        <label>
+          Filter:
+          <input
+            type="text"
+            value={filterInput}
+            onChange={e => setFilterInput(e.target.value)}
+          />
+        </label>
+      </form>
+      <p> {filterInput}</p>
       {todos.map((todo, i) => (
         <SingleTodo key={i} todo={todo}>
           {" "}

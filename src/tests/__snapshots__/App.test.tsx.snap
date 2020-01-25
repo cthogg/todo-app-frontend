@@ -13,6 +13,20 @@ exports[`renders correctly 1`] = `
        TODOs 
     </p>
   </section>
+  <form>
+    <label>
+      Filter:
+      <input
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </label>
+  </form>
+  <p>
+     
+    
+  </p>
   <section
     className="todoCard"
   >
