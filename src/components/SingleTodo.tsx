@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { FaTrash, FaEdit, FaChevronDown, FaChevronUp } from "react-icons/fa";
+import {
+  FaTrash,
+  FaEdit,
+  FaChevronDown,
+  FaChevronUp,
+  FaTicketAlt,
+  FaCheckCircle
+} from "react-icons/fa";
 import { Todo } from "../types";
 import moment from "moment";
 interface SingleTodoProps {
@@ -17,22 +24,19 @@ const SingleTodo: React.FunctionComponent<SingleTodoProps> = ({
   return (
     <section className={"todoCard"}>
       <div className="card">
-        <label className="checkbox">
-          <input type="checkbox" />
-        </label>
-
+        <span onClick={() => onDelete(id)}>
+          <FaCheckCircle> </FaCheckCircle>{" "}
+        </span>
         <p> {title}</p>
         <p> {date} </p>
-        {!open && <button onClick={() => setOpen(true)}> Open </button>}
+        <p> {description}</p>
+
+        {!open && <button onClick={() => setOpen(true)}> Edit </button>}
         {open && (
           <>
             <button onClick={() => setOpen(false)}> Close </button>
 
-            <p> {description}</p>
-            <span onClick={() => onDelete(id)}>
-              <FaTrash></FaTrash>{" "}
-            </span>
-            <FaEdit></FaEdit>
+            {/* TODO: add edit form here */}
           </>
         )}
       </div>
