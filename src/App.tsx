@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.sass";
+import SingleTodo from "./components/SingleTodo";
 
 const App: React.FC = () => {
   return (
@@ -7,6 +8,7 @@ const App: React.FC = () => {
       <section className="section">
         <p className="is-size-2"> TODOs </p>
       </section>
+      <SingleTodo></SingleTodo>
     </div>
   );
 };

@@ -13,5 +13,31 @@ exports[`renders correctly 1`] = `
        TODOs 
     </p>
   </section>
+  <section
+    className="todoCard"
+  >
+    <div
+      className="card"
+    >
+      <label
+        className="checkbox"
+      >
+        <input
+          type="checkbox"
+        />
+      </label>
+      <p>
+         Buy Milk
+      </p>
+      <p>
+         25-01-2020
+      </p>
+      <button
+        onClick={[Function]}
+      >
+         Open 
+      </button>
+    </div>
+  </section>
 </div>
 `;
