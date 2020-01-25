@@ -1,0 +1,33 @@
+import React, { useState } from "react";
+import TodoForm from "./TodoForm";
+import MultipleTodos from "./MultipleTodos";
+import { Todo } from "../types";
+import { mockTodos } from "../App";
+
+interface TodoWrapperProps {
+  name?: string;
+}
+const TodoWrapper: React.FunctionComponent<TodoWrapperProps> = ({
+  name
+}: TodoWrapperProps): JSX.Element => {
+  const [todos, setTodos] = useState<Todo[]>(mockTodos);
+  //TODO:this works but is a hack to force a rerender.
+  const [num, setNum] = useState<number>(1);
+  return (
+    <>
+      <TodoForm
+        addTodo={todo => {
+          var newTodos = todos;
+          newTodos.push(todo);
+          console.log("newTodos: ", newTodos);
+          const uTodos = newTodos;
+          setTodos(uTodos);
+          setNum(num + 1);
+        }}
+      />
+      <MultipleTodos todos={todos} />{" "}
+    </>
+  );
+};
+
+export default TodoWrapper;

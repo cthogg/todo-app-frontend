@@ -3,8 +3,9 @@ import "./App.sass";
 import MultipleTodos from "./components/MultipleTodos";
 import { Todo } from "./types";
 import TodoForm from "./components/TodoForm";
+import TodoWrapper from "./components/TodoWrapper";
 
-const mockTodos: Todo[] = [
+export const mockTodos: Todo[] = [
   {
     title: "Buy Milk",
     id: "1",
@@ -25,8 +26,7 @@ const App: React.FC = () => {
       <section className="section">
         <p className="is-size-2"> TODOs </p>
       </section>
-      <TodoForm></TodoForm>
-      <MultipleTodos todos={mockTodos}> </MultipleTodos>
+      <TodoWrapper> </TodoWrapper>
     </div>
   );
 };

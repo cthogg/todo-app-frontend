@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 interface TodoFormProps {
-  name?: string;
+  addTodo: Function;
 }
 const TodoForm: React.FunctionComponent<TodoFormProps> = ({
-  name
+  addTodo
 }: TodoFormProps): JSX.Element => {
   const [count, setCount] = useState<number>(0);
 
@@ -12,12 +12,14 @@ const TodoForm: React.FunctionComponent<TodoFormProps> = ({
     <div>
       <h1>Add a TODO</h1>
       <Formik
-        initialValues={{ title: "Title", description: "Description" }}
+        initialValues={{
+          title: "Title",
+          description: "Description",
+          date: "2020-01-01"
+        }}
         onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 400);
+          addTodo(values);
+          setSubmitting(false);
         }}
       >
         {({ isSubmitting }) => (
