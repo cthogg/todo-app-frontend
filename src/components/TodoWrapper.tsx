@@ -4,14 +4,9 @@ import MultipleTodos from "./MultipleTodos";
 import { Todo } from "../types";
 import axios from "axios";
 
-interface TodoWrapperProps {
-  name?: string;
-}
-const TodoWrapper: React.FunctionComponent<TodoWrapperProps> = ({
-  name
-}: TodoWrapperProps): JSX.Element => {
+const TodoWrapper: React.FunctionComponent = (): JSX.Element => {
   const [todos, setTodos] = useState<Todo[]>([]);
-  //TODO:this works but is a hack to force a rerender.
+  //FIXME:this works but is a hack to force a re-render.
   const [num, setNum] = useState<number>(1);
   const fetchTodoRoute = "todos";
   //TODO: make this an environmental variable
@@ -26,7 +21,6 @@ const TodoWrapper: React.FunctionComponent<TodoWrapperProps> = ({
 
     const fetchTodos = async () => {
       const result = await axios(FETCH_TODOS);
-      console.log("result: ", result.data);
       setTodos(result.data);
     };
     fetchTodos();
@@ -35,14 +29,12 @@ const TodoWrapper: React.FunctionComponent<TodoWrapperProps> = ({
   const postTodo = async (todo: Todo) => {
     const result = await axios.post(POST_TODOS, todo);
     console.log("result: ", result);
-    //TODO: show error if error
     setNum(num + 1);
   };
 
   const deleteTodo = async (todoId: string) => {
     const result = await axios.delete(`${DELETE_TODO}/${todoId}`);
     console.log("result: ", result);
-    //TODO: show error if error
     setNum(num + 1);
   };
 
@@ -50,30 +42,24 @@ const TodoWrapper: React.FunctionComponent<TodoWrapperProps> = ({
     const todoId = todo.id;
     const result = await axios.put(`${PUT_TODO}/${todoId}`, todo);
     console.log("result: ", result);
-    //TODO: show error if error
     setNum(num + 1);
   };
 
-  // TODO: add these mocks as a switch
-  const postTodoMock = todo => {
-    var newTodos = todos;
-    newTodos.push(todo);
-    const uTodos = newTodos;
-    setTodos(uTodos);
-    setNum(num + 1);
-  };
-
-  const deleteTodoMock = (id: string) => {
-    console.log("todos", todos);
-    //TODO: add test here
-    const newTodos = todos.filter(todo => todo.id !== id);
-    console.log("newTodos: ", newTodos);
-    setTodos(newTodos);
-    setNum(num + 1);
-  };
   return (
     <>
-      <TodoForm addTodo={todo => postTodo(todo)} />
+      <section className="section">
+        <div className="card">
+          <TodoForm addTodo={todo => postTodo(todo)} title="Add a Task" />
+        </div>
+      </section>
+      {todos.length === 0 && (
+        <section className="section">
+          {" "}
+          <div className="card">
+            <p> All Tasks Done </p>
+          </div>{" "}
+        </section>
+      )}
       {todos.length > 0 && (
         <MultipleTodos
           onDelete={(id: string) => deleteTodo(id)}

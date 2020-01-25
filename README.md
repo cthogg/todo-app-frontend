@@ -15,26 +15,29 @@ A simple TODO app
 - run `npm start`
 
 ## Requirements
-- The user can add To-Dos. (Title, description, due date)
-- The user can see the list of To-Dos
-- The user can filter the list by title
-- The user can edit a To-Do
-- The user can delete a To-Do
+- The user can add To-Dos. (Title, description, due date) - Done
+- The user can see the list of To-Dos - Done
+- The user can filter the list by title - Done
+- The user can edit a To-Do - Done
+- The user can delete a To-Do - Done
 
 ## TODO: 
-- Add linting, prettier etc and husky.
-- Add snapshot tests.
-- Add mock backend.
-- Connect to actual backend.
+- add a switch from local backend and real backend.
+- Add title to form
+- make the edit and close buttons icons
+- change the background of the input forms. Put make it obvious that they are inputs!
 
-## Components
-- Single TODO
-- TODO list
-- TODO filter
-- TODO filter and list
-- Submission Box
-
-
+## Next Steps
+If I had more time I would do the following:
+- Add error handling to the requests.
+- Add a switch to switch between local and production servers
+- Add a mock to axios to
+- `const [num, setNum] = useState<number>(1);` is a hack to force a re-render on update. Unfortunately it was not immediately apparently why when the todos did not update the children components did not update.
+- Add cypress e2e tests.
+- ensure due date can only be set in the future
+- The app is usable on mobile but the UX is not very good, especially the SingleTodo Component.
+- change the favicon
+- could put it into a mono-repo with todo-app-backend? 
 ## Design Philosophy
 - Testing. I find snapshot testing and easy and quick way to spot visual regressions. Also code which is easy to test is often better designed code. So it adding tests raises the bar in coding standards. 
 - Automation: Can spot regressions especially when working across the team. Husky: so you are not committing or pushing code which fails tests. Also with a VSCode Snippet. Prettier and eslint makes the code style consistent.

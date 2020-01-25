@@ -17,6 +17,10 @@ exports[`renders correctly 1`] = `
     <div
       className="card"
     >
+      <p>
+         
+        Add a Task
+      </p>
       <form
         action="#"
         onReset={[Function]}
@@ -60,6 +64,19 @@ exports[`renders correctly 1`] = `
       </form>
     </div>
   </section>
+  <section
+    className="section"
+  >
+     
+    <div
+      className="card"
+    >
+      <p>
+         All Tasks Done 
+      </p>
+    </div>
+     
+  </section>
 </div>
 `;
 
@@ -91,77 +108,69 @@ Array [
     <div
       className="card"
     >
-      <section
-        className="todoCard"
+      <div
+        className="level"
       >
         <div
-          className="card"
+          className="level-left"
         >
-          <div
-            className="level"
+          <span
+            className="level-item button is-success"
+            onClick={[Function]}
           >
-            <div
-              className="level-left"
+            <svg
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              strokeWidth="0"
+              style={
+                Object {
+                  "color": undefined,
+                }
+              }
+              viewBox="0 0 512 512"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <span
-                className="level-item button is-success"
-                onClick={[Function]}
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  strokeWidth="0"
-                  style={
-                    Object {
-                      "color": undefined,
-                    }
-                  }
-                  viewBox="0 0 512 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
-                  />
-                </svg>
-                 
-              </span>
-              <p
-                className="level-item"
-              >
-                 
-                Friday, February 8th
-                 
-              </p>
-              <p
-                className="level-item has-text-weight-bold"
-              >
-                 
-                Buy Milk
-              </p>
-              <p
-                className="level-item"
-              >
-                 
-                Buy milk from Rewe
-              </p>
-            </div>
-            <div
-              className="level-right"
-            >
-              <button
-                className="button"
-                onClick={[Function]}
-              >
-                 
-                Edit
-                 
-              </button>
-            </div>
-          </div>
+              <path
+                d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+              />
+            </svg>
+             
+          </span>
+          <p
+            className="level-item"
+          >
+             
+            Friday, February 8th
+             
+          </p>
+          <p
+            className="level-item has-text-weight-bold"
+          >
+             
+            Buy Milk
+          </p>
+          <p
+            className="level-item"
+          >
+             
+            Buy milk from Rewe
+          </p>
         </div>
-      </section>
+        <div
+          className="level-right"
+        >
+          <button
+            className="button"
+            onClick={[Function]}
+          >
+             
+            Edit
+             
+          </button>
+        </div>
+      </div>
     </div>
   </section>,
   <section
@@ -170,77 +179,69 @@ Array [
     <div
       className="card"
     >
-      <section
-        className="todoCard"
+      <div
+        className="level"
       >
         <div
-          className="card"
+          className="level-left"
         >
-          <div
-            className="level"
+          <span
+            className="level-item button is-success"
+            onClick={[Function]}
           >
-            <div
-              className="level-left"
+            <svg
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              strokeWidth="0"
+              style={
+                Object {
+                  "color": undefined,
+                }
+              }
+              viewBox="0 0 512 512"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <span
-                className="level-item button is-success"
-                onClick={[Function]}
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  strokeWidth="0"
-                  style={
-                    Object {
-                      "color": undefined,
-                    }
-                  }
-                  viewBox="0 0 512 512"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
-                  />
-                </svg>
-                 
-              </span>
-              <p
-                className="level-item"
-              >
-                 
-                Friday, February 8th
-                 
-              </p>
-              <p
-                className="level-item has-text-weight-bold"
-              >
-                 
-                Buy Pizza
-              </p>
-              <p
-                className="level-item"
-              >
-                 
-                Ham and Pineapple
-              </p>
-            </div>
-            <div
-              className="level-right"
-            >
-              <button
-                className="button"
-                onClick={[Function]}
-              >
-                 
-                Edit
-                 
-              </button>
-            </div>
-          </div>
+              <path
+                d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+              />
+            </svg>
+             
+          </span>
+          <p
+            className="level-item"
+          >
+             
+            Friday, February 8th
+             
+          </p>
+          <p
+            className="level-item has-text-weight-bold"
+          >
+             
+            Buy Pizza
+          </p>
+          <p
+            className="level-item"
+          >
+             
+            Ham and Pineapple
+          </p>
         </div>
-      </section>
+        <div
+          className="level-right"
+        >
+          <button
+            className="button"
+            onClick={[Function]}
+          >
+             
+            Edit
+             
+          </button>
+        </div>
+      </div>
     </div>
   </section>,
 ]
