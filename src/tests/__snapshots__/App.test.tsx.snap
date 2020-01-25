@@ -15,7 +15,7 @@ exports[`renders correctly 1`] = `
   </section>
   <form>
     <label>
-      Filter:
+      Filter by Title:
       <input
         onChange={[Function]}
         type="text"
@@ -23,10 +23,6 @@ exports[`renders correctly 1`] = `
       />
     </label>
   </form>
-  <p>
-     
-    
-  </p>
   <section
     className="todoCard"
   >

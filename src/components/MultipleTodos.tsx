@@ -9,12 +9,14 @@ const MultipleTodos: React.FunctionComponent<MultipleTodosProps> = ({
   todos
 }: MultipleTodosProps): JSX.Element => {
   const [filterInput, setFilterInput] = useState<string>("");
-
+  const filteredTodos = todos.filter(todo =>
+    todo.title.toLowerCase().includes(filterInput.toLowerCase())
+  );
   return (
     <React.Fragment>
       <form>
         <label>
-          Filter:
+          Filter by Title:
           <input
             type="text"
             value={filterInput}
@@ -22,8 +24,7 @@ const MultipleTodos: React.FunctionComponent<MultipleTodosProps> = ({
           />
         </label>
       </form>
-      <p> {filterInput}</p>
-      {todos.map((todo, i) => (
+      {filteredTodos.map((todo, i) => (
         <SingleTodo key={i} todo={todo}>
           {" "}
         </SingleTodo>
