@@ -51,6 +51,11 @@ exports[`renders correctly 1`] = `
       </button>
     </form>
   </div>
+</div>
+`;
+
+exports[`renders multiple questions correctly 1`] = `
+Array [
   <form>
     <label>
       Filter by Title:
@@ -60,7 +65,7 @@ exports[`renders correctly 1`] = `
         value=""
       />
     </label>
-  </form>
+  </form>,
   <section
     className="todoCard"
   >
@@ -89,7 +94,7 @@ exports[`renders correctly 1`] = `
          Open 
       </button>
     </div>
-  </section>
+  </section>,
   <section
     className="todoCard"
   >
@@ -118,7 +123,6 @@ exports[`renders correctly 1`] = `
          Open 
       </button>
     </div>
-  </section>
-   
-</div>
+  </section>,
+]
 `;

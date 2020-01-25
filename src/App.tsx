@@ -1,8 +1,6 @@
 import React from "react";
 import "./App.sass";
-import MultipleTodos from "./components/MultipleTodos";
 import { Todo } from "./types";
-import TodoForm from "./components/TodoForm";
 import TodoWrapper from "./components/TodoWrapper";
 
 export const mockTodos: Todo[] = [
