@@ -4,12 +4,14 @@ import { Todo } from "../types";
 import moment from "moment";
 interface SingleTodoProps {
   todo: Todo;
+  onDelete: Function;
 }
 const SingleTodo: React.FunctionComponent<SingleTodoProps> = ({
-  todo
+  todo,
+  onDelete
 }: SingleTodoProps): JSX.Element => {
   const [open, setOpen] = useState<boolean>(false);
-  const { dueDate, title, description } = todo;
+  const { dueDate, title, description, id } = todo;
   //TODO: put moment into a helper file for dates.
   const date = moment(dueDate).format("dddd, MMMM Do");
   return (
@@ -27,7 +29,9 @@ const SingleTodo: React.FunctionComponent<SingleTodoProps> = ({
             <button onClick={() => setOpen(false)}> Close </button>
 
             <p> {description}</p>
-            <FaTrash></FaTrash>
+            <span onClick={() => onDelete(id)}>
+              <FaTrash></FaTrash>{" "}
+            </span>
             <FaEdit></FaEdit>
           </>
         )}

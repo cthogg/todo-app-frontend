@@ -1,8 +1,16 @@
 import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import uuidv4 from "uuid/v4";
+
 interface TodoFormProps {
   addTodo: Function;
 }
+
+const generateNewId = () => {
+  const id = uuidv4();
+  console.log("id: ", id);
+  return id;
+};
 const TodoForm: React.FunctionComponent<TodoFormProps> = ({
   addTodo
 }: TodoFormProps): JSX.Element => {
@@ -18,7 +26,10 @@ const TodoForm: React.FunctionComponent<TodoFormProps> = ({
           date: "2020-01-01"
         }}
         onSubmit={(values, { setSubmitting }) => {
-          addTodo(values);
+          var submittedValues = values;
+          submittedValues["id"] = generateNewId();
+          console.log("submittedValues: ", submittedValues);
+          addTodo(submittedValues);
           setSubmitting(false);
         }}
       >

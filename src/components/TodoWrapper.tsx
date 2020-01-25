@@ -19,13 +19,22 @@ const TodoWrapper: React.FunctionComponent<TodoWrapperProps> = ({
         addTodo={todo => {
           var newTodos = todos;
           newTodos.push(todo);
-          console.log("newTodos: ", newTodos);
           const uTodos = newTodos;
           setTodos(uTodos);
           setNum(num + 1);
         }}
       />
-      <MultipleTodos todos={todos} />{" "}
+      <MultipleTodos
+        onDelete={(id: string) => {
+          console.log("todos", todos);
+          //TODO: add test here
+          const newTodos = todos.filter(todo => todo.id !== id);
+          console.log("newTodos: ", newTodos);
+          setTodos(newTodos);
+          setNum(num + 1);
+        }}
+        todos={todos}
+      />{" "}
     </>
   );
 };
