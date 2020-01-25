@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import { Todo } from "../types";
 import moment from "moment";
+import TodoForm from "./TodoForm";
 interface SingleTodoProps {
   todo: Todo;
   onDelete: Function;
@@ -36,7 +37,12 @@ const SingleTodo: React.FunctionComponent<SingleTodoProps> = ({
           <>
             <button onClick={() => setOpen(false)}> Close </button>
 
-            {/* TODO: add edit form here */}
+            <TodoForm
+              addTodo={() => alert("Add a PUT request here")}
+              initialValues={{ dueDate: dueDate, title, description }}
+            >
+              {" "}
+            </TodoForm>
           </>
         )}
       </div>

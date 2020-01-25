@@ -42,7 +42,7 @@ exports[`renders correctly 1`] = `
           value=""
         />
         <input
-          name="date"
+          name="dueDate"
           onBlur={[Function]}
           onChange={[Function]}
           placeholder="Date"
