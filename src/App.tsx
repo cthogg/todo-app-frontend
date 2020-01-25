@@ -1,6 +1,22 @@
 import React from "react";
 import "./App.sass";
-import SingleTodo from "./components/SingleTodo";
+import MultipleTodos from "./components/MultipleTodos";
+import { Todo } from "./types";
+
+const mockTodos: Todo[] = [
+  {
+    title: "Buy Milk",
+    id: "1",
+    dueDate: "2013-02-08T09",
+    description: "Buy milk from Rewe"
+  },
+  {
+    title: "Buy Pizza",
+    id: "2",
+    dueDate: "2013-02-08T09",
+    description: "Ham and Pineapple"
+  }
+];
 
 const App: React.FC = () => {
   return (
@@ -8,7 +24,7 @@ const App: React.FC = () => {
       <section className="section">
         <p className="is-size-2"> TODOs </p>
       </section>
-      <SingleTodo></SingleTodo>
+      <MultipleTodos todos={mockTodos}> </MultipleTodos>
     </div>
   );
 };

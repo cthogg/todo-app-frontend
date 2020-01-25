@@ -27,10 +27,42 @@ exports[`renders correctly 1`] = `
         />
       </label>
       <p>
-         Buy Milk
+         
+        Buy Milk
       </p>
       <p>
-         25-01-2020
+         
+        Friday, February 8th
+         
+      </p>
+      <button
+        onClick={[Function]}
+      >
+         Open 
+      </button>
+    </div>
+  </section>
+  <section
+    className="todoCard"
+  >
+    <div
+      className="card"
+    >
+      <label
+        className="checkbox"
+      >
+        <input
+          type="checkbox"
+        />
+      </label>
+      <p>
+         
+        Buy Pizza
+      </p>
+      <p>
+         
+        Friday, February 8th
+         
       </p>
       <button
         onClick={[Function]}

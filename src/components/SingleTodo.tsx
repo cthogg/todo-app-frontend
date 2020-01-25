@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 import { FaTrash, FaEdit, FaChevronDown, FaChevronUp } from "react-icons/fa";
-
+import { Todo } from "../types";
+import moment from "moment";
 interface SingleTodoProps {
-  name?: string;
+  todo: Todo;
 }
 const SingleTodo: React.FunctionComponent<SingleTodoProps> = ({
-  name
+  todo
 }: SingleTodoProps): JSX.Element => {
   const [open, setOpen] = useState<boolean>(false);
-
+  const { dueDate, title, description } = todo;
+  //TODO: put moment into a helper file for dates.
+  const date = moment(dueDate).format("dddd, MMMM Do");
   return (
     <section className={"todoCard"}>
       <div className="card">
@@ -16,14 +19,14 @@ const SingleTodo: React.FunctionComponent<SingleTodoProps> = ({
           <input type="checkbox" />
         </label>
 
-        <p> Buy Milk</p>
-        <p> 25-01-2020</p>
+        <p> {title}</p>
+        <p> {date} </p>
         {!open && <button onClick={() => setOpen(true)}> Open </button>}
         {open && (
           <>
             <button onClick={() => setOpen(false)}> Close </button>
 
-            <p> Buy Milk from Rewe</p>
+            <p> {description}</p>
             <FaTrash></FaTrash>
             <FaEdit></FaEdit>
           </>
