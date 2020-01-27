@@ -4,17 +4,16 @@ import MultipleTodos from "./MultipleTodos";
 import { Todo } from "../types";
 import axios from "axios";
 
+const apiHost = process.env.REACT_APP_API_HOST;
+const fetchTodoRoute = "todos";
+const POST_TODOS = `${apiHost}${fetchTodoRoute}`;
+const DELETE_TODO = `${apiHost}${fetchTodoRoute}`;
+const PUT_TODO = `${apiHost}${fetchTodoRoute}`;
+
 const TodoWrapper: React.FunctionComponent = (): JSX.Element => {
   const [todos, setTodos] = useState<Todo[]>([]);
   //FIXME:this works but is a hack to force a re-render.
   const [num, setNum] = useState<number>(1);
-  const fetchTodoRoute = "todos";
-  //TODO: make this an environmental variable
-  // const apiHost = "http://localhost:4000/";
-  const apiHost = "https://todo-app-backend-66315.herokuapp.com/";
-  const POST_TODOS = `${apiHost}${fetchTodoRoute}`;
-  const DELETE_TODO = `${apiHost}${fetchTodoRoute}`;
-  const PUT_TODO = `${apiHost}${fetchTodoRoute}`;
 
   useEffect(() => {
     const FETCH_TODOS = `${apiHost}${fetchTodoRoute}`;
