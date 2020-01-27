@@ -1,10 +1,12 @@
 import React from "react";
-import App, { mockTodos } from "../App";
+import App from "../App";
+import { mockTodos } from "./mocks/mocks";
 import renderer from "react-test-renderer";
-import { render } from "@testing-library/react";
 import MultipleTodos from "../components/MultipleTodos";
+import SingleTodo from "../components/SingleTodo";
+import TodoForm from "../components/TodoForm";
 
-it("renders correctly", () => {
+it("renders App correctly", () => {
   const tree = renderer.create(<App> </App>).toJSON();
   expect(tree).toMatchSnapshot();
 });
@@ -16,16 +18,28 @@ it("renders multiple questions correctly", () => {
         onChange={() => null}
         todos={mockTodos}
         onDelete={() => null}
-      >
-        {" "}
-      </MultipleTodos>
+      />
     )
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
 
-test("Renders TODO", () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/TODOS/i);
-  expect(linkElement).toBeInTheDocument();
+it("renders single TODO correctly", () => {
+  const tree = renderer
+    .create(
+      <SingleTodo
+        onChange={() => null}
+        todo={mockTodos[0]}
+        onDelete={() => null}
+      />
+    )
+    .toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+it("renders TodoForm correctly", () => {
+  const tree = renderer
+    .create(<TodoForm addTodo={() => null} title={"Add TODO"} />)
+    .toJSON();
+  expect(tree).toMatchSnapshot();
 });
