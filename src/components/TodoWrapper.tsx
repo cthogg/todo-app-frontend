@@ -11,7 +11,7 @@ const TodoWrapper: React.FunctionComponent = (): JSX.Element => {
   const fetchTodoRoute = "todos";
   //TODO: make this an environmental variable
   // const apiHost = "http://localhost:4000/";
-  const apiHost = "http://todo-app-backend-66315.herokuapp.com/";
+  const apiHost = "https://todo-app-backend-66315.herokuapp.com/";
   const POST_TODOS = `${apiHost}${fetchTodoRoute}`;
   const DELETE_TODO = `${apiHost}${fetchTodoRoute}`;
   const PUT_TODO = `${apiHost}${fetchTodoRoute}`;
