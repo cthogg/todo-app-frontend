@@ -3,10 +3,19 @@
 A simple TODO app
 
 ## How to Run
-- clone this repository with https://github.com/cthogg/todo-app-backend
-- install and run the backend locally. `npm i` then `npm start`
-- install and run the frontend. Set the environmental variable REACT_APP_API_HOST ="http://localhost:4000/". Found in
+
+### Backend
+- clone this repository https://github.com/cthogg/todo-app-backend
+- install packages `npm i` 
+- run `npm start` 
+- backend will be running at `http://localhost:4000/`
+
+### Frontend
+- Set the environmental variable REACT_APP_API_HOST ="http://localhost:4000/". Found in
 `.env` file.
+- install frontend `npm i`
+- run locally `npm start`
+- frontend will be found at `http://localhost:3000/`
 
 ## Requirements
 - node v12.13.1 (npm v6.12.1)
@@ -16,7 +25,7 @@ A simple TODO app
 - install `npm i`
 - run `npm start`
 
-## Requirements
+## User Requirements
 - The user can add To-Dos. (Title, description, due date) - Done
 - The user can see the list of To-Dos - Done
 - The user can filter the list by title - Done
