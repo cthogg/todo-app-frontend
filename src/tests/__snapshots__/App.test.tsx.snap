@@ -5,6 +5,17 @@ exports[`renders App correctly 1`] = `
   <section
     className="section"
   >
+    <button
+      className="button"
+      onClick={[Function]}
+    >
+       
+      Login
+       
+    </button>
+    <div>
+      Loading...
+    </div>
     <p
       className="is-size-2"
     >
