@@ -5,9 +5,22 @@ import renderer from "react-test-renderer";
 import MultipleTodos from "../components/MultipleTodos";
 import SingleTodo from "../components/SingleTodo";
 import TodoForm from "../components/TodoForm";
+import { Auth0Provider } from "../react-auth0-spa";
+import config from "../auth_config.json";
 
 it("renders App correctly", () => {
-  const tree = renderer.create(<App> </App>).toJSON();
+  const tree = renderer
+    .create(
+      <Auth0Provider
+        domain={config.domain}
+        client_id={config.clientId}
+        redirect_uri={window.location.origin}
+        audience={config.audience}
+      >
+        <App> </App>
+      </Auth0Provider>
+    )
+    .toJSON();
   expect(tree).toMatchSnapshot();
 });
 
