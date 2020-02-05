@@ -26,7 +26,7 @@ const App: React.FC = () => {
         <Profile></Profile>
         <p className="is-size-2"> TODOs </p>
       </section>
-      <TodoWrapper> </TodoWrapper>
+      {isAuthenticated && <TodoWrapper> </TodoWrapper>}
     </div>
   );
 };
