@@ -38,20 +38,38 @@ const TodoWrapper: React.FunctionComponent = (): JSX.Element => {
   }, [getTokenSilently, num]);
 
   const postTodo = async (todo: Todo) => {
-    const result = await axios.post(POST_TODOS, todo);
+    const token = await getTokenSilently();
+
+    const result = await axios.post(POST_TODOS, todo, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
     console.log("result: ", result);
     setNum(num + 1);
   };
 
   const deleteTodo = async (todoId: string) => {
-    const result = await axios.delete(`${DELETE_TODO}/${todoId}`);
+    const token = await getTokenSilently();
+
+    const result = await axios.delete(`${DELETE_TODO}/${todoId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
     console.log("result: ", result);
     setNum(num + 1);
   };
 
   const putTodo = async (todo: Todo) => {
+    const token = await getTokenSilently();
+
     const todoId = todo.id;
-    const result = await axios.put(`${PUT_TODO}/${todoId}`, todo);
+    const result = await axios.put(`${PUT_TODO}/${todoId}`, todo, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
     console.log("result: ", result);
     setNum(num + 1);
   };
