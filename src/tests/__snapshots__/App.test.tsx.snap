@@ -14,7 +14,7 @@ exports[`renders App correctly 1`] = `
        
     </button>
     <div>
-      Loading...
+      Please Log In
     </div>
     <p
       className="is-size-2"
