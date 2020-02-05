@@ -6,7 +6,7 @@ import Profile from "./components/Profile";
 
 const App: React.FC = () => {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
-
+  //TODO: change domain and audience in auth_config
   return (
     <div>
       <section className="section">
