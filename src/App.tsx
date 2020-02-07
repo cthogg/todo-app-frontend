@@ -17,7 +17,6 @@ const App: React.FC = () => {
         >
           {" "}
         </NavBar>
-        <p className="is-size-2"> TODOs </p>
       </section>
       {isAuthenticated && <TodoWrapper> </TodoWrapper>}
     </div>

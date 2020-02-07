@@ -13,7 +13,6 @@ const Profile = () => {
   return (
     <Fragment>
       <h2>{user.name}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
-      <p>{user.email}</p>
     </Fragment>
   );
 };

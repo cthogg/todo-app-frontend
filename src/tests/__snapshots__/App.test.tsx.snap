@@ -11,28 +11,36 @@ exports[`renders App correctly 1`] = `
       role="navigation"
     >
       <div
-        className="navbar-item"
+        className="navbar-brand"
+      >
+        <p
+          className="is-size-2"
+        >
+           TODOs 
+        </p>
+      </div>
+      <div
+        className="navbar-end"
       >
         <div
-          className="buttons"
+          className="navbar-item"
         >
-          <button
-            className="button"
-            onClick={[Function]}
+          <div
+            className="buttons"
           >
-             
-            Login
-             
-          </button>
-          <div />
+            <div />
+            <button
+              className="button"
+              onClick={[Function]}
+            >
+               
+              Login
+               
+            </button>
+          </div>
         </div>
       </div>
     </nav>
-    <p
-      className="is-size-2"
-    >
-       TODOs 
-    </p>
   </section>
 </div>
 `;

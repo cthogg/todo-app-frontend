@@ -13,22 +13,27 @@ const NavBar: React.FunctionComponent<NavBarProps> = ({
 }: NavBarProps): JSX.Element => {
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
-      <div className="navbar-item">
-        <div className="buttons">
-          {!isAuthenticated && (
-            <button className="button" onClick={() => loginWithRedirect({})}>
-              {" "}
-              Login{" "}
-            </button>
-          )}
+      <div className="navbar-brand">
+        <p className="is-size-2"> TODOs </p>
+      </div>
+      <div className="navbar-end">
+        <div className="navbar-item">
+          <div className="buttons">
+            <Profile></Profile>
+            {!isAuthenticated && (
+              <button className="button" onClick={() => loginWithRedirect({})}>
+                {" "}
+                Login{" "}
+              </button>
+            )}
 
-          {isAuthenticated && (
-            <button onClick={() => logout()} className="button">
-              {" "}
-              Logout{" "}
-            </button>
-          )}
-          <Profile></Profile>
+            {isAuthenticated && (
+              <button onClick={() => logout()} className="button">
+                {" "}
+                Logout{" "}
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </nav>
