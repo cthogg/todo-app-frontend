@@ -17,7 +17,6 @@ interface TodoFormProps {
 const DEFAULT_DATE = "";
 
 const generateNewId = () => {
-  //TODO: ensure id not generated in the backend
   const id = uuidv4();
   return id;
 };
