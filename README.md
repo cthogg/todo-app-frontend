@@ -35,6 +35,7 @@ A simple TODO app
 
 ## Next Steps
 If I had more time I would do the following:
+- deploy it onto Heroku and Netlify. This will probably involve changing Auth0 to use a production environment and altering the config.
 - Add error handling to the requests.
 - `const [num, setNum] = useState<number>(1);` is a hack to force a re-render on update. Unfortunately it was not immediately apparently why when the todos did not update the children components did not update.
 - Add cypress e2e tests.
@@ -46,7 +47,6 @@ If I had more time I would do the following:
 - at the moment the frontend and backend have the same types (i.e. there is no conversion). Would be good if there was a conversion layer.
 - mock the axios request and add integration tests. For example, checking that when the submit button is clicked, another TODO is added to the row.
 - there is a delay/flicker when the loading text appears and the TODO being added or deleted.
-- ensure that it works not only on Chrome but on FF too.
 
 ## Design Philosophy
 - Testing. I find snapshot testing and easy and quick way to spot visual regressions. Also code which is easy to test is often better designed code. So it adding tests raises the bar in coding standards. 
