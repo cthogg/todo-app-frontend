@@ -23,7 +23,6 @@ const TodoWrapper: React.FunctionComponent = (): JSX.Element => {
     const FETCH_TODOS = `${apiHost}${fetchTodoRoute}`;
 
     const fetchTodos = async () => {
-      console.log("fetchTodos");
       try {
         const token = await getTokenSilently();
         const result = await axios(FETCH_TODOS, {
@@ -31,7 +30,6 @@ const TodoWrapper: React.FunctionComponent = (): JSX.Element => {
             Authorization: `Bearer ${token}`
           }
         });
-        console.log("result.data", result.data);
         if (result.data === "no todos") {
           setTodos([]);
         } else {
@@ -49,12 +47,11 @@ const TodoWrapper: React.FunctionComponent = (): JSX.Element => {
 
     const token = await getTokenSilently();
 
-    const result = await axios.post(POST_TODOS, todo, {
+     await axios.post(POST_TODOS, todo, {
       headers: {
         Authorization: `Bearer ${token}`
       }
     });
-    console.log("result: ", result);
     setIsLoading(false);
 
     setNum(num + 1);
@@ -64,16 +61,13 @@ const TodoWrapper: React.FunctionComponent = (): JSX.Element => {
     const token = await getTokenSilently();
     setIsLoading(true);
 
-    const result = await axios.delete(`${DELETE_TODO}/${todoId}`, {
+    await axios.delete(`${DELETE_TODO}/${todoId}`, {
       headers: {
         Authorization: `Bearer ${token}`
       }
     });
     setIsLoading(false);
     setNum(num + 1);
-
-    console.log("result: ", result);
-    console.log("number ", num);
   };
 
   const putTodo = async (todo: Todo) => {
@@ -81,12 +75,11 @@ const TodoWrapper: React.FunctionComponent = (): JSX.Element => {
 
     const todoId = todo.id;
     setIsLoading(true);
-    const result = await axios.put(`${PUT_TODO}/${todoId}`, todo, {
+    await axios.put(`${PUT_TODO}/${todoId}`, todo, {
       headers: {
         Authorization: `Bearer ${token}`
       }
     });
-    console.log("result: ", result);
     setIsLoading(false);
     setNum(num + 1);
   };
