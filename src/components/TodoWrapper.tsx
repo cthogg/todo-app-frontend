@@ -15,13 +15,15 @@ const TodoWrapper: React.FunctionComponent = (): JSX.Element => {
   const { getTokenSilently } = useAuth0();
 
   const [todos, setTodos] = useState<Todo[]>([]);
+  console.log("todos", todos);
   //FIXME:this works but is a hack to force a re-render.
   const [num, setNum] = useState<number>(1);
-
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   useEffect(() => {
     const FETCH_TODOS = `${apiHost}${fetchTodoRoute}`;
 
     const fetchTodos = async () => {
+      console.log("fetchTodos");
       try {
         const token = await getTokenSilently();
         const result = await axios(FETCH_TODOS, {
@@ -29,7 +31,12 @@ const TodoWrapper: React.FunctionComponent = (): JSX.Element => {
             Authorization: `Bearer ${token}`
           }
         });
-        setTodos(result.data);
+        console.log("result.data", result.data);
+        if (result.data === "no todos") {
+          setTodos([]);
+        } else {
+          setTodos(result.data);
+        }
       } catch (error) {
         console.error(error);
       }
@@ -38,6 +45,8 @@ const TodoWrapper: React.FunctionComponent = (): JSX.Element => {
   }, [getTokenSilently, num]);
 
   const postTodo = async (todo: Todo) => {
+    setIsLoading(true);
+
     const token = await getTokenSilently();
 
     const result = await axios.post(POST_TODOS, todo, {
@@ -46,36 +55,44 @@ const TodoWrapper: React.FunctionComponent = (): JSX.Element => {
       }
     });
     console.log("result: ", result);
+    setIsLoading(false);
+
     setNum(num + 1);
   };
 
   const deleteTodo = async (todoId: string) => {
     const token = await getTokenSilently();
+    setIsLoading(true);
 
     const result = await axios.delete(`${DELETE_TODO}/${todoId}`, {
       headers: {
         Authorization: `Bearer ${token}`
       }
     });
-    console.log("result: ", result);
+    setIsLoading(false);
     setNum(num + 1);
+
+    console.log("result: ", result);
+    console.log("number ", num);
   };
 
   const putTodo = async (todo: Todo) => {
     const token = await getTokenSilently();
 
     const todoId = todo.id;
+    setIsLoading(true);
     const result = await axios.put(`${PUT_TODO}/${todoId}`, todo, {
       headers: {
         Authorization: `Bearer ${token}`
       }
     });
     console.log("result: ", result);
+    setIsLoading(false);
     setNum(num + 1);
   };
 
   return (
-    <>
+    <React.Fragment key={num}>
       <section className="section">
         <div className="card">
           <TodoForm addTodo={todo => postTodo(todo)} title="Add a Task" />
@@ -89,14 +106,15 @@ const TodoWrapper: React.FunctionComponent = (): JSX.Element => {
           </div>{" "}
         </section>
       )}
-      {todos.length > 0 && (
+      {isLoading && <p> Loading </p>}
+      {!isLoading && todos.length > 0 && (
         <MultipleTodos
           onDelete={(id: string) => deleteTodo(id)}
           todos={todos}
           onChange={(todo: Todo) => putTodo(todo)}
         />
       )}
-    </>
+    </React.Fragment>
   );
 };
 

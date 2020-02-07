@@ -1,4 +1,4 @@
-// src/react-auth0-spa.js
+// TODO: get the source from this
 import React, { useState, useEffect, useContext } from "react";
 import createAuth0Client from "@auth0/auth0-spa-js";
 
