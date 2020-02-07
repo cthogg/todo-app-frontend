@@ -1,19 +1,38 @@
-import React, { useState } from 'react'
+import React from "react";
+import Profile from "./Profile";
 
 interface NavBarProps {
-  name: string
+  isAuthenticated: boolean;
+  loginWithRedirect: Function;
+  logout: Function;
 }
 const NavBar: React.FunctionComponent<NavBarProps> = ({
-  name
+  isAuthenticated,
+  loginWithRedirect,
+  logout
 }: NavBarProps): JSX.Element => {
-  const [count, setCount] = useState<number>(0)
-
   return (
-    <span>
-      {name}: {count}
-      <button onClick={() => setCount(count + 1)}> Add One </button>
-    </span>
-  )
-}
+    <nav className="navbar" role="navigation" aria-label="main navigation">
+      <div className="navbar-item">
+        <div className="buttons">
+          {!isAuthenticated && (
+            <button className="button" onClick={() => loginWithRedirect({})}>
+              {" "}
+              Login{" "}
+            </button>
+          )}
 
-export default NavBar
+          {isAuthenticated && (
+            <button onClick={() => logout()} className="button">
+              {" "}
+              Logout{" "}
+            </button>
+          )}
+          <Profile></Profile>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default NavBar;

@@ -5,17 +5,29 @@ exports[`renders App correctly 1`] = `
   <section
     className="section"
   >
-    <button
-      className="button"
-      onClick={[Function]}
+    <nav
+      aria-label="main navigation"
+      className="navbar"
+      role="navigation"
     >
-       
-      Login
-       
-    </button>
-    <div>
-      Please Log In
-    </div>
+      <div
+        className="navbar-item"
+      >
+        <div
+          className="buttons"
+        >
+          <button
+            className="button"
+            onClick={[Function]}
+          >
+             
+            Login
+             
+          </button>
+          <div />
+        </div>
+      </div>
+    </nav>
     <p
       className="is-size-2"
     >

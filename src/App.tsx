@@ -2,36 +2,21 @@ import React from "react";
 import "./App.sass";
 import TodoWrapper from "./components/TodoWrapper";
 import { useAuth0 } from "./react-auth0-spa";
-import Profile from "./components/Profile";
+import NavBar from "./components/NavBar";
 
 const App: React.FC = () => {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
   //TODO: change domain and audience in auth_config
   return (
     <div>
-
       <section className="section">
-      <nav className="navbar" role="navigation" aria-label="main navigation">
-      <div className="navbar-item">
-        <div className="buttons">
-        {!isAuthenticated && (
-          <button className="button" onClick={() => loginWithRedirect({})}>
-            {" "}
-            Login{" "}
-          </button>
-        )}
-
-{isAuthenticated && (
-          <button onClick={() => logout()} className="button">
-            {" "}
-            Logout{" "}
-          </button>
-        )}
-        <Profile></Profile>
-        </div>
-      </div>
-</nav>
-
+        <NavBar
+          isAuthenticated={isAuthenticated}
+          loginWithRedirect={loginWithRedirect}
+          logout={logout}
+        >
+          {" "}
+        </NavBar>
         <p className="is-size-2"> TODOs </p>
       </section>
       {isAuthenticated && <TodoWrapper> </TodoWrapper>}
