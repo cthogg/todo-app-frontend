@@ -9,7 +9,11 @@ const App: React.FC = () => {
   //TODO: change domain and audience in auth_config
   return (
     <div>
+
       <section className="section">
+      <nav className="navbar" role="navigation" aria-label="main navigation">
+      <div className="navbar-item">
+        <div className="buttons">
         {!isAuthenticated && (
           <button className="button" onClick={() => loginWithRedirect({})}>
             {" "}
@@ -17,13 +21,17 @@ const App: React.FC = () => {
           </button>
         )}
 
-        {isAuthenticated && (
+{isAuthenticated && (
           <button onClick={() => logout()} className="button">
             {" "}
             Logout{" "}
           </button>
         )}
         <Profile></Profile>
+        </div>
+      </div>
+</nav>
+
         <p className="is-size-2"> TODOs </p>
       </section>
       {isAuthenticated && <TodoWrapper> </TodoWrapper>}

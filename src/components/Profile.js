@@ -7,14 +7,13 @@ const Profile = () => {
   const { loading, user } = useAuth0();
 
   if (loading || !user) {
-    return <div>Please Log In</div>;
+    return <div></div>;
   }
 
   return (
     <Fragment>
-      <h2>{user.name}</h2>
+      <h2>{user.name}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
       <p>{user.email}</p>
-      <code>{JSON.stringify(user, null, 2)}</code>
     </Fragment>
   );
 };
