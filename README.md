@@ -31,6 +31,7 @@ A simple TODO app
 - The user can filter the list by title - Done
 - The user can edit a To-Do - Done
 - The user can delete a To-Do - Done
+- The user can login and see their own personal TODOs - Done
 
 ## Next Steps
 If I had more time I would do the following:
@@ -44,6 +45,8 @@ If I had more time I would do the following:
 - could put it into a mono-repo with todo-app-backend? 
 - at the moment the frontend and backend have the same types (i.e. there is no conversion). Would be good if there was a conversion layer.
 - mock the axios request and add integration tests. For example, checking that when the submit button is clicked, another TODO is added to the row.
+- there is a delay/flicker when the loading text appears and the TODO being added or deleted.
+
 
 ## Design Philosophy
 - Testing. I find snapshot testing and easy and quick way to spot visual regressions. Also code which is easy to test is often better designed code. So it adding tests raises the bar in coding standards. 
