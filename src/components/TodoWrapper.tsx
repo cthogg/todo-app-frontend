@@ -15,10 +15,9 @@ const TodoWrapper: React.FunctionComponent = (): JSX.Element => {
   const { getTokenSilently } = useAuth0();
 
   const [todos, setTodos] = useState<Todo[]>([]);
-  console.log("todos", todos);
   //FIXME:this works but is a hack to force a re-render.
+
   const [num, setNum] = useState<number>(1);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
   useEffect(() => {
     const FETCH_TODOS = `${apiHost}${fetchTodoRoute}`;
 
@@ -43,30 +42,24 @@ const TodoWrapper: React.FunctionComponent = (): JSX.Element => {
   }, [getTokenSilently, num]);
 
   const postTodo = async (todo: Todo) => {
-    setIsLoading(true);
-
     const token = await getTokenSilently();
 
-     await axios.post(POST_TODOS, todo, {
+    await axios.post(POST_TODOS, todo, {
       headers: {
         Authorization: `Bearer ${token}`
       }
     });
-    setIsLoading(false);
-
     setNum(num + 1);
   };
 
   const deleteTodo = async (todoId: string) => {
     const token = await getTokenSilently();
-    setIsLoading(true);
 
     await axios.delete(`${DELETE_TODO}/${todoId}`, {
       headers: {
         Authorization: `Bearer ${token}`
       }
     });
-    setIsLoading(false);
     setNum(num + 1);
   };
 
@@ -74,18 +67,16 @@ const TodoWrapper: React.FunctionComponent = (): JSX.Element => {
     const token = await getTokenSilently();
 
     const todoId = todo.id;
-    setIsLoading(true);
     await axios.put(`${PUT_TODO}/${todoId}`, todo, {
       headers: {
         Authorization: `Bearer ${token}`
       }
     });
-    setIsLoading(false);
     setNum(num + 1);
   };
 
   return (
-    <React.Fragment key={num}>
+    <React.Fragment>
       <section className="section">
         <div className="card">
           <TodoForm addTodo={todo => postTodo(todo)} title="Add a Task" />
@@ -99,8 +90,7 @@ const TodoWrapper: React.FunctionComponent = (): JSX.Element => {
           </div>{" "}
         </section>
       )}
-      {isLoading && <p> Loading </p>}
-      {!isLoading && todos.length > 0 && (
+      {todos.length > 0 && (
         <MultipleTodos
           onDelete={(id: string) => deleteTodo(id)}
           todos={todos}
